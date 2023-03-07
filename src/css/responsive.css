@@ -1,0 +1,75 @@
+@media (max-width: 880px) {
+  :root {
+    font-size: 15px;
+  }
+}
+@media (max-width: 825px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media (max-width: 770px) {
+  :root {
+    font-size: 13px;
+  }
+}
+@media (max-width: 720px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media (max-width: 665px) {
+  :root {
+    font-size: 11px;
+  }
+}
+@media (max-width: 665px) {
+  .detailComponent .detailBody .detailFlag {
+    height: 20rem;
+  }
+}
+@media (max-width: 588px) {
+  .detailComponent .detailBody .detailFlag {
+    height: 17rem;
+  }
+}
+@media (max-width: 480px) {
+  .detailComponent .detailBody .detailFlag {
+    height: 15rem;
+  }
+}
+@media (max-width: 410px) {
+  .detailComponent .detailBody .detailFlag {
+    height: 12rem;
+  }
+}
+@media (max-width: 665px) {
+  .detailComponent .detailBody {
+    flex-direction: column;
+  }
+  .detailComponent .detailBody .detailFlag {
+    width: 70%;
+  }
+  .detailComponent .detailBody .detailInfo {
+    width: 65%;
+    margin-top: 1.7rem;
+  }
+}
+@media (max-width: 588px) {
+  .filterbar {
+    margin-top: 1.8rem;
+  }
+  .detailComponent .detailBody .detailInfo .info {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .headerComponent {
+    padding: 0.5rem 4.5rem;
+  }
+}
+@media (max-width: 410px) {
+  .headerComponent {
+    padding: 0.5rem 3.8rem;
+  }
+}/*# sourceMappingURL=responsive.css.map */

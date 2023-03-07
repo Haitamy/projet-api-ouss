@@ -1,0 +1,65 @@
+$responsive-padding: 0.5rem 4.5rem;
+$responsive-padding-smaller: 0.5rem 3.8rem;
+$sizes-for-fontSize: 880px 15px, 825px 14px, 770px 13px, 720px 12px, 665px 11px;
+$sizes-for-flagHeight: 665px 20rem, 588px 17rem, 480px 15rem, 410px 12rem;
+
+@each $screen, $size in $sizes-for-fontSize{
+    @media (max-width: $screen){
+        :root{
+            font-size: $size;
+        }
+    }
+}
+@each $screen, $size in $sizes-for-flagHeight{
+    @media (max-width: $screen){
+        .detailComponent{
+            .detailBody{
+                .detailFlag{
+                    height: $size;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 665px) {
+    .detailComponent{
+        .detailBody{
+            flex-direction: column;
+            .detailFlag{
+                width: 70%;
+            }
+            .detailInfo{
+                width: 65%;
+                margin-top: 1.7rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 588px) { //this is where continent filter goes to the next line
+    .filterbar{
+        margin-top: 1.8rem;
+    }
+    .detailComponent{
+        .detailBody{
+            .detailInfo{
+                .info{
+                    flex-direction: column;
+                }    
+            }
+        }
+    }
+}
+
+@media(max-width: 480px){
+    .headerComponent{
+        padding: $responsive-padding;
+    }
+}
+
+@media(max-width: 410px){
+    .headerComponent{
+        padding: $responsive-padding-smaller;
+    }
+}

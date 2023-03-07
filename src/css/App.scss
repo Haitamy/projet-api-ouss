@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap');
+
+//dark mode variables
+$dark-mode-elements: hsl(209, 23%, 22%);
+$dark-mode-background: hsl(207, 26%, 17%);
+$dark-mode-text: hsl(0, 0%, 100%);
+
+//light mode variables
+$light-mode-elements: hsl(0, 0%, 100%);
+$light-mode-background: hsl(0, 0%, 98%);
+$light-mode-text: hsl(200, 15%, 8%);
+$light-mode-input: hsl(0, 0%, 52%);
+
+//box-shadow
+$shadow: 0 0 0.56rem 0.2rem rgba(0,0,0,0.05);
+$country-shadow: 0 0 0.44rem 0.12rem rgba(0, 0, 0, 0.03);
+$button-shadow: 0px 0px 0.44rem rgba(0,0,0,0.29);
+
+//other variables
+$dropdown-select: hsl(190, 87%, 70%);
+$body-padding: 0.5rem 5.5rem;
+
+*{
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body{
+    margin: 0;
+    color: $light-mode-text;
+    background-color: $light-mode-background;
+    transition: background-color 0.4s ease;
+    min-height: 100vh;
+}
+.headerComponent{
+    user-select: none;
+    padding: $body-padding;
+    box-shadow: $shadow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $light-mode-elements;
+    h1{
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+    h2{
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+.filterComponent{
+    margin: 2rem 0;
+    padding: $body-padding;
+    font-family: inherit;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    .searchbar{
+        width: 30rem;
+        display: flex;
+        align-items: center; 
+        .searchIcon{
+            font-size: 1.1rem;
+            margin-left: 2rem;
+        }
+        .searchSpace{
+            border: none;
+            background-color: transparent;
+            height: 100%;
+            width: 100%;
+            font-size: 1rem;
+            margin-left: 1.5rem;
+        }
+        .searchSpace::placeholder{
+            font-size: 0.9rem;
+        }
+        .searchIcon, .searchSpace, .searchSpace::placeholder{
+            color: $light-mode-input;
+        }
+        .searchSpace:focus{
+            outline: none;
+        }
+    }
+    .filterbar{
+        width: 12.5rem;
+        position: relative;
+        font-size: 0.9rem;
+        input{
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0.75rem 1rem;
+            background-color: transparent;
+            color: $light-mode-text;
+            border: none;
+            outline: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .dropdown-icon{
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .options{
+            user-select: none;
+            position: absolute;
+            top: 110%;
+            width: 100%;
+            box-shadow: inherit;
+            border-radius: inherit;
+            overflow: hidden;
+            background-color: $light-mode-elements;
+            cursor: default;
+            div{
+                padding: 0.5rem 1rem;
+            }
+            div:hover{
+                background-color: $dropdown-select;
+            }
+        }
+        .options.hide{
+            display: none;
+        }
+    }
+    .searchbar, .filterbar{
+        background-color: $light-mode-elements;
+        height: 3.5rem;
+        border-radius: 0.33rem;
+        box-shadow: $shadow;
+    }
+}
+.mainComponent{
+    padding: $body-padding;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 0.4rem; //to ensure each country does not touch when screen is smaller
+    .country{
+        margin-bottom: 2.5rem;
+        width: 16.5rem;
+        height: 21rem;
+        border-radius: 0.33rem;
+        box-shadow: $country-shadow;
+        background-color: $light-mode-elements;
+        color: $light-mode-text;
+        overflow: auto;
+        cursor: pointer;
+        .flag{
+            width: 100%;
+            height: 10rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        h3, p{
+            margin: {
+                left: 1.5rem;
+                right: 0.1rem; //to avoid h3 touching edges
+            }  
+        }
+        p{
+            font-size: 0.9rem;
+            line-height: 0.8rem;
+            span{
+                font-weight: 600;
+            }
+        }
+    }
+    .country:hover{
+        box-shadow: $button-shadow;
+    }
+}
+.detailComponent{
+    padding: $body-padding;
+    button{
+        border: none;
+        outline: none;
+        cursor: pointer;
+        box-shadow: $button-shadow;
+        border-radius: 0.37rem; 
+        background-color: $light-mode-elements;
+        color: $light-mode-text;
+    }
+    .backButton{
+        margin: 3.2rem 0;
+        padding: 0.8rem 2rem;
+        font-size: inherit;    
+    }
+    button:hover{
+        box-shadow: $country-shadow;
+    }
+    .detailBody{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .detailFlag{
+            width: 47%;
+            height: 25rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%; 
+        }
+        .detailInfo{
+            width: 43%;
+            height: 20rem;
+            h4{
+                margin: 0;
+                margin-bottom: 1rem;
+                font-size: 2rem;
+                // font-weight: 600;
+            }
+            .info{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 2rem;
+                .part{
+                    min-width: 12rem;
+                    p{
+                        line-height: 1rem;
+                        span{
+                            font-weight: 800;
+                        }
+                    }
+                }
+            }
+            .borderCountries{
+                font-weight: 800;
+                .borderButton{
+                    padding: 1rem;
+                    margin: 0 0.5rem 0.9rem;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+//DARK MODE
+body.dark{
+    background-color: $dark-mode-background;
+    color: $dark-mode-text;
+
+    .headerComponent{
+        background-color: $dark-mode-elements;
+    }
+
+    .filterComponent{
+        .searchbar{
+            background-color: $dark-mode-elements;
+            .searchIcon, .searchSpace, .searchSpace::placeholder{
+                color: $dark-mode-text;
+            }
+        }
+        .filterbar{
+            input{
+                color: $dark-mode-text;
+            }
+            .options{
+                background-color: $dark-mode-elements;
+                div:hover{
+                    // background-color: $dark-mode-background;
+                    background-color: darken($dropdown-select, 30%);
+                }
+            }
+        }
+        .searchbar, .filterbar{
+            background-color: $dark-mode-elements;
+        }
+    }
+
+    .mainComponent{
+        .country{
+            background-color: $dark-mode-elements;
+            color: $dark-mode-text;
+        }
+    }
+
+    .detailComponent{
+        button{
+            background-color: $dark-mode-elements;
+            color: $dark-mode-text;
+        }
+    }
+}
